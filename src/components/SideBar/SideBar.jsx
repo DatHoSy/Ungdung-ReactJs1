@@ -13,13 +13,15 @@ import { Toggle } from "components/Toggle";
 const StyleNavLink = styled.div`
     display: flex;
     a {
-        margin-left: 20px;
-        width: 91px;
-        height: 21px;
         font-weight: 500;
         font-size: 16px;
         line-height: 21px;
         text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        color: black;
     }
 `;
 
@@ -81,11 +83,25 @@ const StyleSideBar = styled.div`
         }
     }
     > div:hover svg {
-        fill: #6ec4f5;
         path{
-            stroke: #5429FF;
+            stroke: #217ffa;
         }
     }
+    svg {
+        path {
+            fill: none;
+            stroke: #9c9c9c;
+        }
+    }
+    .active {
+        svg {
+            path {
+                stroke: #217ffa;
+            }
+        }
+        color: #217ffa;
+    }
+
     > div {
         margin-top: 27px;
         margin-left: 20%;
@@ -103,11 +119,10 @@ const StyleSideBar = styled.div`
 `;
 
 
-const NavItem = ({path, text, children}) => {
+const NavItem = ({path, children}) => {
     return (
         <StyleNavLink>
-            {children}
-            <NavLink to={path}>{text}</NavLink>
+            <NavLink to={path}>{children}</NavLink>
         </StyleNavLink>
    )
 }
@@ -117,18 +132,45 @@ const SideBar = () => {
     return (
         <StyleSideBar>
             <Logo></Logo>
-            <NavItem className="navItemCss" path={'/'} text={'Dashboard'}><IconDashBoard/></NavItem>
-            <NavItem className="navItemCss" path={'/home'} text={'Market'}><IconMarket/></NavItem>
-            <NavItem className="navItemCss" path={'/'} text={'Active Bids'}><IconMarket/></NavItem>
+            <NavItem className="navItemCss" path={'/home'} text={'Dashboard'}>
+                <IconDashBoard/>
+                <span>Dashboard</span>
+            </NavItem>
+            <NavItem className="navItemCss" path={'/about'} text={'Market'}>
+                <IconMarket/>
+                <span>Market</span>
+            </NavItem>
+            <NavItem className="navItemCss" path={'*'} text={'Active Bids'}>
+                <IconMarket/>
+                <span>Active Bids</span>
+            </NavItem>
             <div className="text-nav">Profile </div>
-            <NavItem className="navItemCss" path={'/home'} text={'My Portfolio'}><IconMarket/></NavItem>
-            <NavItem className="navItemCss" path={'/'} text={'Wallet'}><IconMarket/></NavItem>
-            <NavItem className="navItemCss" path={'/home'} text={'Favourites'}><IconMarket/></NavItem>
-            <NavItem className="navItemCss" path={'/'} text={'History'}><IconMarket/></NavItem>
-            <NavItem className="navItemCss" path={'/home'} text={'Settings'}><IconMarket/></NavItem>
+            <NavItem className="navItemCss" path={'*'} text={'My Portfolio'}>
+                <IconMarket/>
+                <span>My Portfolio</span>
+            </NavItem>
+            <NavItem className="navItemCss" path={'*'} text={'Wallet'}>
+                <IconMarket/>
+                <span>Wallet</span>
+            </NavItem>
+            <NavItem className="navItemCss" path={'*'} text={'Favourites'}>
+                <IconMarket/>
+                <span>Favourites</span>
+            </NavItem>
+            <NavItem className="navItemCss" path={'*'} text={'History'}>
+                <IconMarket/>
+                <span>History</span>
+            </NavItem>
+            <NavItem className="navItemCss" path={'*'} text={'Settings'}>
+                <IconMarket/>
+                <span>Settings</span>
+            </NavItem>
             <div className="text-nav">Other</div>
             <div className="lightMode">
-                <NavItem className="navItemCss" path={'/home'} text={'Light Mode'}><IconMarket/></NavItem>
+                <NavItem className="navItemCss" path={'*'} text={'Light Mode'}>
+                    <IconMarket/>
+                    <span>Light Mode</span>
+                </NavItem>
                 <Toggle></Toggle>
             </div>
             <div className="balance">

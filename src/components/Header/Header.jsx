@@ -3,6 +3,7 @@ import search from "../assets/search.svg";
 import notify from "../assets/notify.svg";
 import userImg from "../assets/user.svg";
 import { Link } from "react-router-dom";
+import { Logout } from "API";
 
 const StyleHeader = styled.div`
     display: flex;
@@ -92,7 +93,7 @@ const Header = () => {
                     <img className="toggle" src={userImg} alt="" />
                     <ul class="list">
                         <li>Setting</li>
-                        <li><Link to={'/'}>Logout</Link></li>
+                        <li onClick={() => Logout()}>Logout</li>
                     </ul>
                 </div>
             </div>

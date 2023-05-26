@@ -3,7 +3,11 @@ import { Logo } from "components/Logo";
 import { Link } from "react-router-dom";
 import crewImg from 'components/assets/crewImg.svg';
 import eyeIcon from 'components/assets/eyeIcon.svg';
+import Facebook from 'components/assets/Facebook.svg';
+import Github from 'components/assets/Github.svg';
+import Google from 'components/assets/Google.svg';
 import { styled } from "styled-components";
+import { Login } from "API";
 
 const StyleLogin = styled.div`
     body {
@@ -118,16 +122,6 @@ const StyleLogin = styled.div`
         text-align: center;
     }
 
-    /* div.nav-form button {
-        position: relative;
-        width: 150px;
-        height: 46px;
-        background: #D885A3;
-        border-radius: 23px;
-        border: none;
-        cursor: pointer;
-    } */
-
     div.nav-form p {
         font-weight: 400;
         font-size: 14px;
@@ -135,7 +129,8 @@ const StyleLogin = styled.div`
         color: #6096B4;
     }
 
-    div.nav-form div a img {
+    div.nav-form div img {
+        margin-left: 5%;
         box-sizing: border-box;
         width: 125px;
         height: 50px;
@@ -175,8 +170,8 @@ const StyleLogin = styled.div`
             top: 10px;
         }
 
-        div.nav-form div a img  {
-            width: 70px;
+        div.nav-form div img  {
+            width: 90px;
             height: 30px;
         }
 
@@ -221,7 +216,7 @@ const StyleLogin = styled.div`
             top: 2px;
         }
 
-        div.nav-form div a img  {
+        div.nav-form div img  {
             width: 50px;
             height: 20px;
         }
@@ -273,7 +268,7 @@ const StyleLogin = styled.div`
             top: -1px;
         }
 
-        div.nav-form div a img  {
+        div.nav-form div img  {
             width: 35px;
             height: 15px;
         }
@@ -325,7 +320,7 @@ const StyleLogin = styled.div`
             top: -1px;
         }
 
-        div.nav-form div a img  {
+        div.nav-form div img {
             width: 20px;
             height: 12px;
         }
@@ -363,25 +358,33 @@ const LoginPage = () => {
                 <h2>Log In</h2>
                  <div className="login-form">
                     <label for="user-name">Username</label>
-                    <input id="user" type="text" value="kminchelle"/>
+                    <input id="user" type="text" defaultValue={'kminchelle'}/>
                     <div className="forgot-passw">
                         <label for="password">Password</label>
                         <label for="password"> forgot password?</label>
                     </div>
                     <div className="input-passw">
-                        <input id="passw" type="password" value="0lelplR"/>
+                        <input id="passw" type="password" defaultValue="0lelplR"/>
                         <img id="eye-passw" src={eyeIcon} alt=""/>
                     </div>
                 </div>
                 <div className="nav-form">
-                    <Link to={'/home'}>
-                        <Button className="btnLogin" btnText={"Login"} isText={true} ftSize={'12px'} width={"77"} height={"32"} radius={40} bgColor={'#5429FF'}></Button>
-                    </Link>
+                    {/* <Link to={'/home'}> */}
+                        <Button className="btnLogin"
+                                btnText={"Login"}
+                                isText={true} ftSize={'12px'}
+                                width={"77"}
+                                height={"32"}
+                                radius={40}
+                                bgColor={'#5429FF'}
+                                onClick={() => Login()}>
+                        </Button>
+                    {/* </Link> */}
                     <p>or continue with</p>
                     <div>
-                        <img src="img/Google.svg" alt=""/>
-                        <img src="img/Github.svg" alt=""/>
-                        <img src="img/Facebook.svg" alt=""/>
+                        <img src={Google} alt=""/>
+                        <img src={Github} alt=""/>
+                        <img src={Facebook} alt=""/>
                     </div>
                     <p>Don’t have an account yet? &nbsp;<Link to={'home'}>Sign up for free</Link></p>
                 </div>
