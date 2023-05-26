@@ -39,6 +39,36 @@ const StyleContainer = styled.div`
             background-position: 0 50%;
         }
     }
+
+    /* :root {
+        --hue: 223;
+        --primary: hsl(var(--hue),90%,50%);
+        --trans-dur: 0.6s;
+        --trans-timing: cubic-bezier(0.65,0,0.35,1);
+        font-size: calc(60px + (120 - 60) * (100vw - 320px) / (2560 - 320));
+    } */
+    /* .switch,
+    input {
+        font: 1em/1.5 sans-serif;
+    } */
+
+        /* background-color: hsl(var(--hue),10%,90%); */
+    > div {
+        background-color: white;
+    }
+    :has(.switch__input:checked) {
+        background-color: #c2c2c2;
+        .right {
+            background-color: #b0b0b0;
+        }
+    }
+    /* :has(.switch__input:checked) {
+        background-color: lightgray;
+        color: black;
+    }
+    :has(.switch__input:checked){
+        
+    } */
 `
 
 

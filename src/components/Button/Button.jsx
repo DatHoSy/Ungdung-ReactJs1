@@ -12,9 +12,10 @@ const StyleButton = styled.button`
     font-size: ${props => props.ftSize};
     line-height: 21px;
     color: ${props => props.btnText < 0 ? "red" : "#747475"};
+    cursor: pointer;
     img {
         margin-right: 8px;
-  }
+    }
 `;
 
 
