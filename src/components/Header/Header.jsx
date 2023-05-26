@@ -2,8 +2,7 @@ import { styled } from "styled-components";
 import search from "../assets/search.svg";
 import notify from "../assets/notify.svg";
 import userImg from "../assets/user.svg";
-import { Link } from "react-router-dom";
-import { Logout } from "API";
+import { Logout } from "API/logout";
 
 const StyleHeader = styled.div`
     display: flex;

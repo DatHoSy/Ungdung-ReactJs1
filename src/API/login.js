@@ -28,8 +28,3 @@ export const Login = async () => {
     }
     alert('Account not found!');
 }
-
-export const Logout = () => {
-    window.localStorage.removeItem(ACCESS_TOKEN);
-    window.location.assign('/');
-}

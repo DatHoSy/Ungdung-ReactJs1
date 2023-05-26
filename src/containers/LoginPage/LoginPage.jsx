@@ -7,7 +7,8 @@ import Facebook from 'components/assets/Facebook.svg';
 import Github from 'components/assets/Github.svg';
 import Google from 'components/assets/Google.svg';
 import { styled } from "styled-components";
-import { Login } from "API";
+import { Login } from "API/login";
+import { useEffect } from "react";
 
 const StyleLogin = styled.div`
     body {
@@ -351,7 +352,12 @@ const StyleLogin = styled.div`
 `;
 
 const LoginPage = () => {
+    useEffect(()=> {
+      console.log('aaaa');  
+    }, [])
+    console.log('render');
     return (
+        
        <StyleLogin>
             <div className="flex-left">
                 <Logo></Logo>
